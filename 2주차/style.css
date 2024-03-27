@@ -1,0 +1,26 @@
+#example {
+  color: blueviolet;
+}
+
+.hi {
+  color: blue;
+  text-decoration: underline;
+}
+
+#hello span {
+  color: aqua;
+}
+
+div .blue_span {
+  background-color: blue;
+}
+
+div span#c_span {
+  color: orange;
+}
+
+div span {
+  background-color: yellow;
+}
+
+/*이건 css 주석*/
