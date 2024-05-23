@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9fafc;
+  margin: 60px;
+}
+
+.container {
+  border: 5px dashed #cacfd9;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: row; /*direction 안 쓰면 row가 기본값*/
+  justify-content: flex-start; /*flex-start가 기본값*/
+  align-items: stretch; /*stretch가 기본값*/
+  gap: 20px 50px; /*가로 세로 여백 따로 설정할 수 있음*/
+}
+
+.box {
+  border-radius: 15px;
+  color: #f9fafc;
+  padding: 30px;
+}
+
+.red {
+  background-color: #e46e80;
+}
+
+.blue {
+  background-color: #6e87e4;
+}
+.green {
+  background-color: #6ee4af;
+}

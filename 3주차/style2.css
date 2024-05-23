@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9fafc;
+  margin: 60px;
+}
+
+.container {
+  border: 5px dashed #cacfd9;
+  width: 500px;
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /*절대적인 px 대신 fr 쓰면 상대적인 프레임(비율)로 설정가능*/
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.box {
+  border-radius: 15px;
+  color: #f9fafc;
+  padding: 10px;
+}
+
+.red {
+  background-color: #e46e80;
+}
+
+.blue {
+  background-color: #6e87e4;
+}
+.green {
+  background-color: #6ee4af;
+  grid-row: 2/4; /*2번부터 4번까지 넓게 차지*/
+  grid-column: 4;
+}
+.purple {
+  background-color: #bf6ee4;
+}
+.orange {
+  background-color: #e4a36e;
+}
