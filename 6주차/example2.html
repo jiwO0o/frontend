@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 500px;
+        height: 200px;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .inner {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+
+      .text {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">
+        <p class="text"></p>
+        <p></p>
+      </div>
+    </div>
+    <script>
+      const div = document.querySelector(".inner");
+
+      let text = document.querySelector(".text");
+
+      let num = 1;
+      div.addEventListener("click", function numClick() {
+        text.innerHTML = "클릭 횟수" + num;
+        num = num + 1;
+      });
+    </script>
+  </body>
+</html>

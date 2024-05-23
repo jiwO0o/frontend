@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Quiz</title>
+    <style>
+      .quizbox {
+        width: 300px;
+        height: 300px;
+        background-color: rgb(255, 225, 229);
+        border-radius: 15px;
+        gap: 10px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .quizbox input {
+        width: 300px;
+        height: 50px;
+      }
+      .quizbox button {
+        width: 250px;
+        height: 50px;
+        background-color: lightpink;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quizbox">
+      <div class="score">점수</div>
+      <div id="quiz">질문 :</div>
+      <div>
+        답
+        <input type="text" id="answer" />
+      </div>
+      <button>제출</button>
+    </div>
+
+    <script>
+      let question = [
+        "떡볶이 vs 마라탕",
+        "여름 vs 겨울",
+        "전화 vs 카톡",
+        "고기 vs 회",
+        "짜장 vs 짬뽕",
+      ];
+      let answer = ["떡볶이", "겨울", "카톡", "고기", "짬뽕"];
+
+      let round = 0;
+      let score = 0;
+
+      let getscore = document.querySelector(".score");
+      getscore.innerHTML = "점수 " + score + "/5";
+
+      let getquestion = document.getElementById("quiz");
+      getquestion.innerHTML = "질문 :" + "<Br>" + question[round];
+
+      const button = document.querySelector("button");
+      button.addEventListener("click", answercheck);
+
+      function gotonext() {
+        document.getElementById("answer").value = "";
+        if (round < 5) {
+          let getscore = document.querySelector(".score");
+          getscore.innerHTML = "점수 " + score + "/5";
+
+          let getquestion = document.getElementById("quiz");
+          getquestion.innerHTML = "질문 :" + "<Br>" + question[round];
+        } else {
+          let getquestion = document.getElementById("quiz");
+
+          button.style.backgroundColor = "lightgrey";
+          button.disabled = true;
+          button.removeEventListener("click", answercheck);
+
+          if (score > 3) {
+            getquestion.innerHTML =
+              "모든 질문이 끝났습니다." +
+              "<br>" +
+              score +
+              "점이라니 저랑 잘 맞으시네요!";
+          } else {
+            getquestion.innerHTML =
+              "모든 질문이 끝났습니다." +
+              "<br>" +
+              score +
+              "점이라니 더 분발하셔야겠어요...";
+          }
+        }
+      }
+
+      function answercheck() {
+        let getanswer = document.getElementById("answer").value;
+        if (getanswer == "") {
+          alert("답을 입력해주세요!");
+        } else {
+          if (getanswer == answer[round]) {
+            score++;
+          }
+          round++;
+          gotonext();
+        }
+      }
+    </script>
+  </body>
+</html>
